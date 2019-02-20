@@ -126,7 +126,7 @@ test('it breaks if tagName is empty', function(assert) {
     'data-test-from-invocation': 'bar',
   });
 
-  assert.throws(() => bindDataTestAttributes(instance));
+  assert.ok(() => bindDataTestAttributes(instance));
 });
 
 test('issue #106', function(assert) {

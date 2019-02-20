@@ -1,4 +1,4 @@
-import { assert } from '@ember/debug';
+import { assert, warn } from '@ember/debug';
 import { isArray } from '@ember/array';
 
 const TEST_SELECTOR_PREFIX = /data-test-.*/;
@@ -20,7 +20,7 @@ export default function bindDataTestAttributes(component) {
   let message = `ember-test-selectors could not bind data-test-* properties on ${component} ` +
     `automatically because tagName is empty.`;
 
-  assert(message, tagName !== '', {
+  warn(message, tagName !== '', {
     id: 'ember-test-selectors.empty-tag-name',
   });
 
